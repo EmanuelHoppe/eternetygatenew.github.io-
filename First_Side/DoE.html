@@ -1,50 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eternety Gate</title>
-    <link rel="stylesheet" href="Css/layout.css">
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eternety Gate</title>
+  <link rel="stylesheet" href="css/layout.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <style>
+    #game-container {
+      position: relative;
+      width: 100%;
+      height: 600px;
+    }
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      display: none; /* Anfangs ausgeblendet */
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+    }
+    #download-btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-family: 'Press Start 2P', cursive;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="../Startseite/StartSeite.html">Start</a></li>
-            <li><a href="../Support/Support.html">Support</a></li>
-            <li><a href="../FAQ/FAQ.html">FAQ</a></li>
-           <li>
-                <label for="Spiel">Spiele:</label>
-                <select id="Spiele" name="Spiele" onchange="window.location.href=this.value;">
-                    <option value="">Spiele</option>
-                    <option value="../First_Side/DoE.html">Dungeon of Eternety</option>
-                    <option value="Coming Soon...">Coming Soon...</option>
-                </select>
-            </li>
-        </ul>
-    </nav>
-    <h1>Eternety Gate</h1>
-    <main>
-        <h2>Dungeon of Eternety</h2>
-<div id="game-container">
-  <iframe src="../Dungeon webGL_01/index.html" width="100%" height="100%" frameborder="100%"></iframe>
-  <div id="overlay">
-    <p>Die Demo ist beendet! Lade das volle Spiel herunter:</p>
-    <button id="download-btn" onclick="window.location.href='download/MeinSpiel.zip'">Spiel herunterladen</button>
-  </div>
-</div>
+  <nav>
+    <ul>
+      <li><a href="../Startseite/StartSeite.html">Start</a></li>
+      <li><a href="../Support/Support.html">Support</a></li>
+      <li><a href="../FAQ/FAQ.html">FAQ</a></li>
+      <li>
+        <label for="Spiel">Spiele:</label>
+        <select id="Spiele" name="Spiele" onchange="window.location.href=this.value;">
+          <option value="">Spiele</option>
+          <option value="../First_Side/DoE.html">Dungeon of Eternety</option>
+          <option value="Coming Soon...">Coming Soon...</option>
+        </select>
+      </li>
+    </ul>
+  </nav>
 
-<script>
-  setTimeout(() => {
-    document.getElementById("overlay").style.display = "flex";
-  }, 300000);
-</script>
-    </main>
+  <h1>Eternety Gate</h1>
+  <main>
+    <h2>Dungeon of Eternety</h2>
+    <div id="game-container">
+      <iframe id="gameframe" src="../Dungeon webGL_01/index.html" width="100%" height="100%" frameborder="0"></iframe>
+      <div id="overlay">
+        <p>Die Demo ist beendet! Lade das volle Spiel herunter:</p>
+        <button id="download-btn" onclick="window.location.href='../Dungeon webGL_01/PurpleDungeon.zip'">
+             Spiel herunterladen
+        </button>
+    </div>
+
+    <script>
+      setTimeout(() => {
+        document.getElementById("gameframe").src = "";
+        document.getElementById("overlay").style.display = "flex";
+      }, 2000); // 2 Sekunden
+    </script>
+  </main>
 </body>
 <footer>
-    <ul>
-        <li><a href="../impressumusw/impressum.html">Impressum-Credits-Datenschutz</a></li>
-    </ul>
+  <ul>
+    <li><a href="../impressumusw/impressum.html">Impressum-Credits-Datenschutz</a></li>
+  </ul>
 </footer>
 </html>
