@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternety Gate</title>
+    <link rel="stylesheet" href="css/layout.css">
+     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="../Startseite/StartSeite.html">Start</a></li>
+            <li><a href="../Support/Support.html">Support</a></li>
+            <li><a href="../FAQ/FAQ.html">FAQ</a></li>
+           <li>
+                <label for="Spiel">Spiele:</label>
+                <select id="Spiele" name="Spiele" onchange="window.location.href=this.value;">
+                    <option value="">Spiele</option>
+                    <option value="../First_Side/DoE.html">Dungeon of Eternety</option>
+                    <option value="Coming Soon...">Coming Soon...</option>
+                </select>
+            </li>
+        </ul>
+    </nav>
+    <main>
+         <h1>Kontaktformular</h1>
+<form action="mailto:EmanuelHoppe53@gmail.com" method="post" enctype="text/plain">
+    <div class="row">
+        <div class="field">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="Name" required>
+        </div>
+        <div class="field">
+            <label for="email">E-Mail:</label>
+            <input type="email" id="email" name="Email" required>
+        </div>
+    </div>
+
+    <div class="field-full">
+        <label for="nachricht">Nachricht:</label>
+        <textarea id="nachricht" name="Nachricht" rows="5" cols="10" required></textarea>
+    </div>
+
+    <div class="button-row">
+        <input type="submit" value="E-Mail senden">
+        <input type="reset" value="Zurücksetzen">
+    </div>
+</form>
+
+</form>
+    </main>
+</body>
+<footer>
+    <ul>
+        <li><a href="../impressumusw/impressum.html">Impressum-Credits-Datenschutz</a></li>
+    </ul>
+</footer>
+</html>
